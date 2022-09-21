@@ -1,0 +1,153 @@
+entered_String = gets
+number_Of_Shifts = gets.to_i
+
+def caesar_cypher(entered_String, number_Of_Shifts)
+  
+  stringLettersArray = entered_String.split("")
+
+  for a in 0..(stringLettersArray.length - 2)
+    stringNumber = stringLettersArray[a].upcase
+
+    stringNumber = string_To_Number(stringNumber)
+
+    if stringNumber == ""
+      puts stringLettersArray[a]
+    end
+
+    stringNumber = stringNumber.to_i
+
+    stringNumber += number_Of_Shifts
+
+    if (stringNumber > 25)
+      stringNumber -= 25
+    elsif (stringNumber < 0)
+      stringNumber += 25
+    end
+
+    stringNumber = number_To_String(stringNumber)
+
+    print stringNumber
+  end
+
+  return 0
+end
+
+def string_To_Number(stringToConvert)
+  case stringToConvert
+  when "A"
+    return 0
+  when "B"
+    return 1
+  when "C"
+    return 2
+  when "D"
+    return 3
+  when "E"
+    return 4
+  when "F"
+    return 5
+  when "G"
+    return 6
+  when "H"
+    return 7
+  when "I"
+    return 8
+  when "J"
+    return 9
+  when "K"
+    return 10
+  when "L"
+    return 11
+  when "M"
+    return 12
+  when "N"
+    return 13
+  when "O"
+    return 14
+  when "P"
+    return 15
+  when "Q"
+    return 16
+  when "R"
+    return 17
+  when "S"
+    return 18
+  when "T"
+    return 19
+  when "U"
+    return 20
+  when "V"
+    return 21
+  when "W"
+    return 22
+  when "X"
+    return 23
+  when "Y"
+    return 24
+  when "Z"
+    return 25
+  else
+    return ""
+  end
+end
+
+def number_To_String(stringToConvert)
+  case stringToConvert
+  when 0
+    return "A"
+  when 1
+    return "B"
+  when 2
+    return "C"
+  when 3
+    return "D"
+  when 4
+    return "E"
+  when 5
+    return "F"
+  when 6
+    return "G"
+  when 7
+    return "H"
+  when 8
+    return "I"
+  when 9
+    return "J"
+  when 10
+    return "K"
+  when 11
+    return "L"
+  when 12
+    return "M"
+  when 13
+    return "N"
+  when 14
+    return "O"
+  when 15
+    return "P"
+  when 16
+    return "Q"
+  when 17
+    return "R"
+  when 18
+    return "S"
+  when 19
+    return "T"
+  when 20
+    return "U"
+  when 21
+    return "V"
+  when 22
+    return "W"
+  when 23
+    return "X"
+  when 24
+    return "Y"
+  when 25
+    return "Z"
+  else
+    return ""
+  end
+end
+
+caesar_cypher(entered_String, number_Of_Shifts)
